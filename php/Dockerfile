@@ -1,5 +1,7 @@
 FROM php:8.0-apache
 
+RUN a2enmod rewrite
+    
 RUN apt update
 
 RUN apt install -y \
@@ -8,14 +10,22 @@ RUN apt install -y \
       libpq-dev \
       libzip-dev \
       zip \
-      zlib1g-dev
+      zlib1g-dev \ 
+      libpng-dev \
+      libjpeg-dev \
+      libfreetype6-dev \
+      libzip-dev
+      
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg
 
 RUN docker-php-ext-install \
       intl \
       opcache \
       pdo \
       pdo_pgsql \
-      pgsql 
+      pgsql \ 
+      gd \
+      zip
 
 WORKDIR /var/www/laravel_docker
 

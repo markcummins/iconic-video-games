@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', array(App\Http\Controllers\GamesController::class, 'index'));
+
+Route::get('/import', array(App\Http\Controllers\GamesImportController::class, 'index'));

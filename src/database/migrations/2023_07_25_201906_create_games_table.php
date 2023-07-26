@@ -15,6 +15,12 @@ return new class extends Migration
   {
     Schema::create('games', function (Blueprint $table) {
       $table->id();
+      $table->string('title');
+      $table->year('release_date');
+      $table->string('platform');
+      $table->string('developer');
+      $table->string('genre');
+      $table->text('content')->nullable();
       $table->timestamps();
     });
   }

@@ -17,10 +17,10 @@ return new class extends Migration
       $table->id();
       $table->string('title');
       $table->year('release_date');
-      $table->string('platform');
-      $table->string('developer');
-      $table->string('genre');
-      $table->text('content')->nullable();
+      $table->jsonb('platform');
+      $table->jsonb('developer');
+      $table->jsonb('genre');
+      $table->jsonb('content');
       $table->timestamps();
     });
   }

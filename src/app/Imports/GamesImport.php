@@ -13,17 +13,20 @@ class GamesImport implements ToModel, WithHeadingRow
   /**
    * @param array $row
    *
-   * @return Game|null
+   * @return Games|null
    */
   public function model(array $row)
   {
     return new Games([
       'title' => $row['title'],
       'release_date' => $row['release_date'],
-      'platform' => $row['platform'],
-      'developer' => $row['developer'],
-      'genre' => $row['genre'],
-      'content' => $row['content'],
+      'platform' => json_encode(explode(', ', $row['platform'])),
+      'developer' => json_encode(explode(' / ', $row['developer'])),
+      'genre' => json_encode(explode(' / ', $row['genre'])),
+      'content' => json_encode(array(
+        'original' => $row['content'],
+        'generated' => '',
+      ))
     ]);
   }
 }

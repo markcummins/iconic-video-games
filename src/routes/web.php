@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\GamesController;
+
+use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', array(App\Http\Controllers\GamesController::class, 'index'));
+Route::get('/', array(GamesController::class, 'home'));
 
-Route::get('/import', array(App\Http\Controllers\GamesImportController::class, 'index'));
+Route::get('/single', array(GamesController::class, 'single_page'));

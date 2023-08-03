@@ -16,5 +16,12 @@ class Games extends Model
     'content',
   ];
 
+  protected $casts = [
+    'platform' => 'array',
+    'developer' => 'array',
+    'genre' => 'array',
+    'content' => 'object',
+  ];
+
   use HasFactory;
 }

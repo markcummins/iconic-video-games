@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\GamesController;
+use App\Http\Controllers\GamesImportController;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -20,3 +21,5 @@ use Inertia\Inertia;
 Route::get('/', array(GamesController::class, 'home'));
 
 Route::get('/single', array(GamesController::class, 'single_page'));
+
+Route::get('/import', array(GamesImportController::class, 'index'));

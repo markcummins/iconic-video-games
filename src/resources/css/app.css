@@ -1,4 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 body {
   background: #dee;
+  font-family: 'Ubuntu', sans-serif;
   background: linear-gradient(90deg, rgb(253, 253, 254) 0%, rgb(248, 248, 185) 100%);
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Press Start 2P', cursive;
+}
+
+.font-ps2p {
+  font-family: 'Press Start 2P', cursive;
+}
+
+/* h1 {
+  font-size: 80px;
+} */
